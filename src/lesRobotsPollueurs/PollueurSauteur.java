@@ -6,17 +6,16 @@ public class PollueurSauteur extends RobotPollueur {
         super(0, 0, monde);
         this.delTax=delTax;
     }
+    @Override
     public void parcourir() {
         int line = 0;
         int col = 0;
-
         while (line < this.getMonde().getNbrLines()) {
-            this.getMonde().metPapierGras(line, col);;
+            this.getMonde().metPapierGras(line, line*col);;
             col += this.delTax;
             line++;
-
-            if (col>= this.getMonde().getNbrColumns()) {
-                col = col % col;
+            if (col> this.getMonde().getNbrColumns()) {
+                col = 0;
             }
         }
     }

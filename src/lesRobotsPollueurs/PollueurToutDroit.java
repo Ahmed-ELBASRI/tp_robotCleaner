@@ -6,6 +6,7 @@ public class PollueurToutDroit extends RobotPollueur {
         super(0, colDepart, monde);
         this.colDepart = colDepart;
     }
+    @Override
     public void parcourir() {
     	for(int i=0;i<this.getMonde().getNbrLines();i++) {
     		this.getMonde().metPapierGras(i, this.colDepart);
